@@ -16,4 +16,9 @@ void main() {
   for (int element in list) {
     print("Element is: $element");
   }
+
+  int sum = list.reduce((value, element) => value + element);
+  num average = sum / list.length;
+
+  print("Done");
 }
