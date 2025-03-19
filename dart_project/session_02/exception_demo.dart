@@ -1,25 +1,31 @@
 import 'dart:io';
 
 void main() {
-  int age;
+  int age = 0;
+  bool isValid = false;
 
-  print('Enter age:');
-  age = int.parse(stdin.readLineSync()!);
-  print('Age: $age');
+  do {
+    print('Enter age:');
 
-  // try {
-  //   var result = divide(10, 3);
-  //   print('Result: $result');
-  // } catch (e) {
-  //   print('Error: $e');
-  // }
-  //
-  // try {
-  //   int number = int.parse("abc");
-  //   print('Number: $number');
-  // } catch (e) {
-  //   print('Error: $e');
-  // }
+    try {
+      age = int.parse(stdin.readLineSync()!);
+      if (age < 0) {
+        throw Exception('Age cannot be negative!');
+      }
+
+      isValid = true;
+    } catch (e) {
+      // print('Invalid input. Please enter a valid age.');
+      print(e);
+    }
+  } while (!isValid);
+
+  try {
+    var result = divide(10, 0);
+    print('Result: $result');
+  } catch (e) {
+    print('Error: $e');
+  }
 }
 
 num divide(int num1, int num2) {
