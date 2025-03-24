@@ -13,7 +13,7 @@ void printInfo({required Student student}) {
 }
 
 void inputInfo({required Student student}) {
-  print('Enter id:');
+  print('Enter id (Not duplicated):');
   student.id = int.parse(stdin.readLineSync()!);
 
   print('Enter name:');
